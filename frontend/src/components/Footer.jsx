@@ -24,6 +24,21 @@ const Footer = () => {
             <li>Privacy policy</li>
           </ul>
         </div>
+
+        <div>
+          <p className="text-xl font-medium mb-5">GET IN TOUCH</p>
+          <ul className="flex flex-col gap-1 text-gray-600">
+            <li>+1-212-456-7890</li>
+            <li>Contact@foreveryou.com</li>
+          </ul>
+        </div>
+      </div>
+
+      <div>
+        <hr />
+        <p className="py-5 text-sm text-center">
+          Copyright 2026@ forever.com - All Right Reserved.
+        </p>
       </div>
     </div>
   );
