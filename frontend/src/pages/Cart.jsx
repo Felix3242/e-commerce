@@ -50,6 +50,9 @@ const Cart = () => {
                   <p className="text-xs sm:text-lg font-medium">
                     {productData.name}
                   </p>
+                  <div className='flex items-center gap-5 mt-2'>
+                    <p>{currency}{productData.price}</p>
+                  </div>
                 </div>
               </div>
             </div>
