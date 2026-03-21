@@ -34,13 +34,21 @@ const Product = () => {
           <div className='flex sm:flex-col overflow-x-auto sm:overflow-y-scroll justify-between sm:justify-normal sm:w-[18.7%] w-full'>
             {productData.image.map((item, index) => (
               <img
+                onClick={() => setImage(item)}
                 key={index}
                 src={item}
                 className='w-[24%] sm:w-full sm:mb-3 flex-shrink-0 cursor-pointer'
+                alt=""
               />
             ))}
           </div>
+          <div className='w-full sm:w-[80%]'>
+            <img className='w-full h-auto' src={image} alt="" />
+          </div>
         </div>
+        
+        {/* Product Info */}
+
       </div>
     </div>
   ) : <div className="opacity-0"></div>
