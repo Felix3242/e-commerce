@@ -15,11 +15,10 @@ const Product = () => {
     products.map((item) => {
       if (item._id === productId) {
         setProductData(item);
-        setImage(item.image[0]);
-        console.log(item);
+        setImage(item.image[0])
         return null;
       }
-    });
+    })
   };
 
   useEffect(() => {
@@ -53,11 +52,11 @@ const Product = () => {
         <div className='flex-1'>
           <h1 className='font-medium text-2xl mt-2'>{productData.name}</h1>
           <div className='flex items-center gap-1 mt-2'>
-            <img src={assets.star_icon} alt="" className="w-3 5" />
-            <img src={assets.star_icon} alt="" className="w-3 5" />
-            <img src={assets.star_icon} alt="" className="w-3 5" />
-            <img src={assets.star_icon} alt="" className="w-3 5" />
-            <img src={assets.star_dull_icon} alt="" className="w-3 5" />
+            <img src={assets.star_icon} alt="" className="w-3.5" />
+            <img src={assets.star_icon} alt="" className="w-3.5" />
+            <img src={assets.star_icon} alt="" className="w-3.5" />
+            <img src={assets.star_icon} alt="" className="w-3.5" />
+            <img src={assets.star_dull_icon} alt="" className="w-3.5" />
             <p className='pl-2'>(122)</p>
           </div>
           <p className='mt-5 text-3xl font-medium'>{currency}{productData.price}</p>
@@ -69,12 +68,19 @@ const Product = () => {
                 <button
                   onClick={() => setSize(item)}
                   key={index}
-                  className={`border py-2 px-4 bg-gray-100 ${item === size ? "border-orange-500" : ""}`}
+                  className={`border py-2 px-4 bg-gray-100 cursor-pointer ${item === size ? "border-orange-500" : ""}`}
                 >
                   {item}
                 </button>
               ))}
             </div>
+          </div>
+          <button className='bg-black cursor-pointer text-white px-8 py-3 text-sm active:bg-gray-700'>ADD TO CART</button>
+          <hr className='mt-8 sm:w-4/5'></hr>
+          <div className='text-sm text-gray-500 mt-5 flex flex-col gap-1'>
+            <p>100% Original product.</p>
+            <p>Cash on delivery is available on this product.</p>
+            <p>Easy return and exchange policy within 7 days.</p>
           </div>
         </div>
       </div>
