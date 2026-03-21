@@ -16,9 +16,10 @@ const RelatedProducts = ({ category, subCategory }) => {
       productsCopy = productsCopy.filter(
         (item) => item.subCategory === subCategory,
       );
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setRelated(productsCopy.slice(0, 5));
     }
-  }, [products]);
+  }, [category, products, subCategory]);
 
   return (
     <div className="my-24">

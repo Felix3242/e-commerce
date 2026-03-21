@@ -24,6 +24,7 @@ const Cart = () => {
         }
       }
     }
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setCartData(tempData);
   }, [cartItems]);
 
@@ -40,7 +41,7 @@ const Cart = () => {
           );
           return (
             <div
-              key={index}
+              key={item._id + item.size}
               className="py-4 border-t border-b text-gray-700 grid grid-cols-[4fr_0.5fr_0.5fr] sm:grid-cols-[4fr_2fr_0.5fr] items-center gap-4"
             >
               <div className="flex items-start gap-6">
@@ -77,7 +78,7 @@ const Cart = () => {
                 className="border max-w-10 sm:max-w-20 px-1 sm:px-2 py-1"
                 type="number"
                 min={1}
-                defaultValue={item.quantity}
+                value={item.quantity}
               />
               <img
                 onClick={() => updateQuantity(item._id, item.size, 0)}
@@ -92,6 +93,9 @@ const Cart = () => {
       <div className="flex justify-end my-20">
         <div className="w-full sm:w-[450px]">
           <CartTotal />
+          <div className='w-full text-end'>
+            <button className='cursor-pointer bg-black text-white text-sm my-8 px-8 py-3'>PROCEED TO CHECKOUT</button>
+          </div>
         </div>
       </div>
     </div>

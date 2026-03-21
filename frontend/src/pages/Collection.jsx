@@ -68,10 +68,12 @@ const Collection = () => {
   };
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     applyFilter();
   }, [category, subCategory, search, showSearch]);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     sortProduct();
   }, [sortType]);
 

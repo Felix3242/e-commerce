@@ -1,6 +1,7 @@
 import { createContext, useState } from "react";
 import { products } from "../assets/assets";
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 // eslint-disable-next-line react-refresh/only-export-components
 export const ShopContext = createContext();
@@ -10,7 +11,8 @@ const ShopContextProvider = (props) => {
   const delivery_fee = 10;
   const [search, setSearch] = useState('');
   const [showSearch, setShowSearch] = useState(false);
-  const [cartItems, setCartItems] = useState([]);
+  const [cartItems, setCartItems] = useState({});
+  const navigate = useNavigate();
 
   const addToCart = async (itemId, size) => {
 
@@ -44,9 +46,8 @@ const ShopContextProvider = (props) => {
           if (cartItems[items][item] > 0) {
             totalCount += cartItems[items][item];
           }
-        } catch (error) {
-          
-        }
+        // eslint-disable-next-line no-unused-vars
+        } catch (error) { /* empty */ }
       }
     }
     return totalCount;
@@ -67,9 +68,8 @@ const ShopContextProvider = (props) => {
           if (cartItems[items][item] > 0) {
             totalAmount += cartItems[items][item] * itemInfo.price;
           }
-        } catch (error) {
-          
-        }
+        // eslint-disable-next-line no-unused-vars
+        } catch (error) { /* empty */ }
       }
     }
     return totalAmount;
@@ -87,7 +87,8 @@ const ShopContextProvider = (props) => {
     addToCart,
     getCartCount,
     updateQuantity,
-    getCartAmount
+    getCartAmount,
+    navigate,
   };
 
   return (
