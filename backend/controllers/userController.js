@@ -5,6 +5,6 @@ const loginUser = async (req, res) => {};
 const registerUser = async (req, res) => {};
 
 // Route for Admin login
-const loginAdmin = async (req, res) => {};
+const adminLogin = async (req, res) => {};
 
-export { loginUser, registerUser, loginAdmin };
+export { loginUser, registerUser, adminLogin };
