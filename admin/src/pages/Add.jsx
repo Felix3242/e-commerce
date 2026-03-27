@@ -153,7 +153,13 @@ const Add = () => {
               )
             }
           >
-            <p className="bg-slate-200 px-3 py-1 cursor-pointer">S</p>
+            <p
+              className={`${
+                sizes.includes("S") ? "bg-pink-100" : "bg-slate-200"
+              } px-3 py-1 cursor-pointer`}
+            >
+              S
+            </p>
           </div>
 
           <div
@@ -165,7 +171,13 @@ const Add = () => {
               )
             }
           >
-            <p className="bg-slate-200 px-3 py-1 cursor-pointer">M</p>
+            <p
+              className={`${
+                sizes.includes("M") ? "bg-pink-100" : "bg-slate-200"
+              } px-3 py-1 cursor-pointer`}
+            >
+              M
+            </p>
           </div>
 
           <div
@@ -177,7 +189,13 @@ const Add = () => {
               )
             }
           >
-            <p className="bg-slate-200 px-3 py-1 cursor-pointer">L</p>
+            <p
+              className={`${
+                sizes.includes("L") ? "bg-pink-100" : "bg-slate-200"
+              } px-3 py-1 cursor-pointer`}
+            >
+              L
+            </p>
           </div>
 
           <div
@@ -189,7 +207,13 @@ const Add = () => {
               )
             }
           >
-            <p className="bg-slate-200 px-3 py-1 cursor-pointer">XL</p>
+            <p
+              className={`${
+                sizes.includes("XL") ? "bg-pink-100" : "bg-slate-200"
+              } px-3 py-1 cursor-pointer`}
+            >
+              XL
+            </p>
           </div>
 
           <div
@@ -201,7 +225,13 @@ const Add = () => {
               )
             }
           >
-            <p className="bg-slate-200 px-3 py-1 cursor-pointer">XXL</p>
+            <p
+              className={`${
+                sizes.includes("XXL") ? "bg-pink-100" : "bg-slate-200"
+              } px-3 py-1 cursor-pointer`}
+            >
+              XXL
+            </p>
           </div>
         </div>
       </div>
