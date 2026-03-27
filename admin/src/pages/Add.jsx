@@ -144,24 +144,64 @@ const Add = () => {
       <div>
         <p className="mb-2">Product Sizes</p>
         <div className="flex gap-3">
-          <div className="bg-slate-200 px-3 py-1 cursor-pointer">
-            <p>S</p>
+          <div
+            onClick={() =>
+              setSizes((prev) =>
+                prev.includes("S")
+                  ? prev.filter((item) => item !== "S")
+                  : [...prev, "S"],
+              )
+            }
+          >
+            <p className="bg-slate-200 px-3 py-1 cursor-pointer">S</p>
           </div>
 
-          <div className="bg-slate-200 px-3 py-1 cursor-pointer">
-            <p>M</p>
+          <div
+            onClick={() =>
+              setSizes((prev) =>
+                prev.includes("M")
+                  ? prev.filter((item) => item !== "M")
+                  : [...prev, "M"],
+              )
+            }
+          >
+            <p className="bg-slate-200 px-3 py-1 cursor-pointer">M</p>
           </div>
 
-          <div className="bg-slate-200 px-3 py-1 cursor-pointer">
-            <p>L</p>
+          <div
+            onClick={() =>
+              setSizes((prev) =>
+                prev.includes("L")
+                  ? prev.filter((item) => item !== "L")
+                  : [...prev, "L"],
+              )
+            }
+          >
+            <p className="bg-slate-200 px-3 py-1 cursor-pointer">L</p>
           </div>
 
-          <div className="bg-slate-200 px-3 py-1 cursor-pointer">
-            <p>XL</p>
+          <div
+            onClick={() =>
+              setSizes((prev) =>
+                prev.includes("XL")
+                  ? prev.filter((item) => item !== "XL")
+                  : [...prev, "XL"],
+              )
+            }
+          >
+            <p className="bg-slate-200 px-3 py-1 cursor-pointer">XL</p>
           </div>
 
-          <div className="bg-slate-200 px-3 py-1 cursor-pointer">
-            <p>XXL</p>
+          <div
+            onClick={() =>
+              setSizes((prev) =>
+                prev.includes("XXL")
+                  ? prev.filter((item) => item !== "XXL")
+                  : [...prev, "XXL"],
+              )
+            }
+          >
+            <p className="bg-slate-200 px-3 py-1 cursor-pointer">XXL</p>
           </div>
         </div>
       </div>
