@@ -95,20 +95,29 @@ const Add = () => {
       </div>
 
       <div>
-        <p>Product Sizes</p>
-        <div>
-          <div>
+        <p className='mb-2'>Product Sizes</p>
+        <div className='flex gap-3'>
+
+          <div className="bg-slate-200 px-3 py-1 cursor-pointer">
             <p>S</p>
           </div>
-          <div>
+
+          <div className="bg-slate-200 px-3 py-1 cursor-pointer">
             <p>M</p>
           </div>
-          <div>
+
+          <div className="bg-slate-200 px-3 py-1 cursor-pointer">
             <p>L</p>
           </div>
-          <div>
+
+          <div className="bg-slate-200 px-3 py-1 cursor-pointer">
             <p>XL</p>
           </div>
+
+          <div className="bg-slate-200 px-3 py-1 cursor-pointer">
+            <p>XXL</p>
+          </div>
+
         </div>
       </div>
 
