@@ -30,6 +30,18 @@ const Orders = ({ token }) => {
     }
   };
 
+  const statusHandler = async ( event, orderId) => {
+    try {
+      const response = await axios.post(backendUrl + '/api/order/status', {orderId, status: event.target.value}, {headers: {token}});
+      if (response.data.success){
+        await fetchAllOrders();
+      }
+    } catch (error) {
+      console.log(error);
+      toast.error(error.message);
+    }
+  }
+
   useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect
     fetchAllOrders();
@@ -93,7 +105,7 @@ const Orders = ({ token }) => {
             <p className="text-sm sm:text-[15px]">
               {currency} {order.amount}
             </p>
-            <select value={order.status} className="p-2 font-semibold">
+            <select value={order.status} className="p-2 font-semibold" onChange={(event) => statusHandler(event, order._id)}>
               <option value="Order Placed">Order Placed</option>
               <option value="Packing">Packing</option>
               <option value="Shipped">Shipped</option>
