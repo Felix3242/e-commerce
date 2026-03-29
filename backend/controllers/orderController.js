@@ -150,4 +150,5 @@ export {
   allOrders,
   userOrders,
   updateStatus,
+  verifyStripe,
 };
