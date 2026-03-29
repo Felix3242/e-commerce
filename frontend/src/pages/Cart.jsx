@@ -39,6 +39,9 @@ const Cart = () => {
           const productData = products.find(
             (product) => product._id === item._id,
           );
+
+          if (!productData) return null;
+
           return (
             <div
               key={item._id + item.size}
