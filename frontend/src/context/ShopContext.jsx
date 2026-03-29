@@ -125,11 +125,6 @@ const ShopContextProvider = (props) => {
     }
   };
 
-  useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    getProductsData();
-  }, []);
-
   const getUserCart = async (userToken) => {
     try {
       const response = await axios.post(
@@ -145,6 +140,11 @@ const ShopContextProvider = (props) => {
       toast.error(error.message);
     }
   };
+  
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    getProductsData();
+  }, []);
 
   useEffect(() => {
     if (!token && localStorage.getItem("token")) {
