@@ -7,7 +7,16 @@ import { ShopContext } from "../context/ShopContext";
 
 const PlaceOrder = () => {
   const [method, setMethod] = useState("cod");
-  const { navigate, backendUrl, token, cartItems, setCartItems, getCartAmount, delivery_fee, products } = useContext(ShopContext);
+  const {
+    navigate,
+    backendUrl,
+    token,
+    cartItems,
+    setCartItems,
+    getCartAmount,
+    delivery_fee,
+    products,
+  } = useContext(ShopContext);
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -47,18 +56,9 @@ const PlaceOrder = () => {
         }
       }
       console.log(orderItems);
+    // eslint-disable-next-line no-unused-vars
     } catch (error) {
-      
-    }
-  }
-
-  return (
-    <form onSubmit={onSubmitHandler} className="flex flex-col sm:flex-row justify-between gap-4 pt-5 sm:pt-14 min-h-[80vh] border-t">
-      {/* Left Side */}
-        }
-      }
-    } catch (error) {
-      
+      // handle error
     }
   }
 
