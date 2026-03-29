@@ -86,10 +86,9 @@ const PlaceOrder = () => {
         default:
           break;
       }
-
-      // eslint-disable-next-line no-unused-vars
     } catch (error) {
-      // handle error
+      console.log(error);
+      toast.error(error.message);
     }
   };
 
