@@ -44,11 +44,18 @@ const Orders = ({ token }) => {
             <img src={assets.parcel_icon} alt="" />
             <div>
               {order.items.map((item, index) => {
-                if (index === order.items.length) {
+                if (index === order.items.length - 1) {
                   return (
                     <p key={index}>
                       {" "}
                       {item.name} x {item.quantity} <span>{item.size}</span>
+                    </p>
+                  );
+                } else {
+                  return (
+                    <p key={index}>
+                      {" "}
+                      {item.name} x {item.quantity} <span>{item.size}</span> ,
                     </p>
                   );
                 }
@@ -57,6 +64,7 @@ const Orders = ({ token }) => {
           </div>
         ))}
       </div>
+      <p>{order.address}</p>
     </div>
   );
 };
