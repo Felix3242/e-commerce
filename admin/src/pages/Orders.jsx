@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import axios from "axios";
-import { backendUrl } from "../App";
+import { backendUrl, currency } from "../App";
 import { toast } from "react-toastify";
 import { assets } from "../assets/assets";
 
@@ -83,6 +83,14 @@ const Orders = ({ token }) => {
               <p>Payment : {order.payment ? 'Done' : 'Pending'}</p>
               <p>Date : {new Date(order.date).toLocaleDateString()}</p>
             </div>
+            <p>{currency} {order.amount}</p>
+            <select>
+              <option value="Order Placed">Order Placed</option>
+              <option value="Packing">Packing</option>
+              <option value="Shipped">Shipped</option>
+              <option value="Out for delivery">Out for delivery</option>
+              <option value="Delivered">Delivered</option>  
+            </select>
           </div>
         ))}
       </div>
