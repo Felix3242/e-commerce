@@ -100,7 +100,7 @@ const Orders = ({ token }) => {
               </p>
               <p className="mt-3">Method : {order.paymentMethod}</p>
               <p>Payment : {order.payment ? "Done" : "Pending"}</p>
-              <p>Date : {new Date(order.date).toLocaleDateString()}</p>
+              <p>Date : {new Date(order.date).toLocaleString()}</p>
             </div>
             <p className="text-sm sm:text-[15px]">
               {currency} {order.amount}

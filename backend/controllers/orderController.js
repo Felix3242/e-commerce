@@ -80,6 +80,8 @@ const placeOrderStripe = async (req, res) => {
       mode: "payment",
     });
 
+    await orderModel.findByIdAndUpdate(newOrder._id, { sessionId: session.id });
+
     res.json({ success: true, session_url: session.url });
   } catch (error) {
     console.log(error);
@@ -89,9 +91,16 @@ const placeOrderStripe = async (req, res) => {
 
 // Verify Stripe
 const verifyStripe = async (req, res) => {
-  const { orderId, success, userId } = req.body;
+  const { orderId, userId } = req.body;
   try {
-    if (success === "true") {
+    const order = await orderModel.findById(orderId);
+    if (!order || !order.sessionId) {
+      return res.json({ success: false, message: "Order not found" });
+    }
+
+    const session = await stripe.checkout.sessions.retrieve(order.sessionId);
+
+    if (session.payment_status === "paid") {
       await orderModel.findByIdAndUpdate(orderId, { payment: true });
       await userModel.findByIdAndUpdate(userId, { cartData: {} });
       res.json({ success: true });
@@ -123,7 +132,10 @@ const allOrders = async (req, res) => {
 const userOrders = async (req, res) => {
   try {
     const { userId } = req.body;
-    const orders = await orderModel.find({ userId });
+    const orders = await orderModel.find({
+      userId,
+      $or: [{ paymentMethod: "COD" }, { payment: true }],
+    });
     res.json({ success: true, orders });
   } catch (error) {
     console.log(error);
